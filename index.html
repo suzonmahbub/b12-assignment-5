@@ -42,7 +42,7 @@
           <button
             class="btn bg-[#e4f6e8] flex gap-2.5 items-center rounded-full px-5 py-3.5"
           >
-            <span>0</span>
+            <span id="heart" class="font-bold text-base">0</span>
             <img
               class="w-7 h-7 object-cover"
               src="./assets/heart.png"
@@ -52,7 +52,7 @@
           <button
             class="btn bg-[#e4f6e8] flex gap-2.5 items-center rounded-full px-5 py-3.5"
           >
-            <span>0</span>
+            <span>100</span>
             <img
               class="w-7 h-7 object-cover"
               src="./assets/coin.png"
@@ -90,7 +90,7 @@
         <!-- Grid Layout -->
         <div class="bg-[#f5fff6] grid grid-cols-12 gap-7 p-12">
           <div class="col-span-9 grid grid-cols-3 gap-7">
-            <!-- Single Card -->
+            <!-- National Emergency -->
             <div class="shadow rounded-xl bg-white p-7">
               <div class="flex justify-between items-center">
                 <div
@@ -102,11 +102,12 @@
                     alt="emergency"
                   />
                 </div>
-                <img
-                  class="w-6 h-6 object-cover"
-                  src="./assets/heart.png"
-                  alt="heart"
-                />
+                <button
+                  onclick="clickHeart()"
+                  class="cursor-pointer text-[#5c5c5c] text-2xl"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </button>
               </div>
               <h2 class="text-xl leading-8 font-bold mt-4">
                 National Emergency Number
@@ -133,7 +134,7 @@
                 </button>
               </div>
             </div>
-            <!-- Single Card -->
+            <!-- Police Helpline -->
             <div class="shadow rounded-xl bg-white p-7">
               <div class="flex justify-between items-center">
                 <div
@@ -145,11 +146,12 @@
                     alt="police"
                   />
                 </div>
-                <img
-                  class="w-6 h-6 object-cover"
-                  src="./assets/heart.png"
-                  alt="heart"
-                />
+                <button
+                  onclick="clickHeart()"
+                  class="cursor-pointer text-[#5c5c5c] text-2xl"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </button>
               </div>
               <h2 class="text-xl leading-8 capitalize font-bold mt-4">
                 Police Helpline Number
@@ -176,7 +178,7 @@
                 </button>
               </div>
             </div>
-            <!-- Single Card -->
+            <!-- Fire Service  -->
             <div class="shadow rounded-xl bg-white p-7">
               <div class="flex justify-between items-center">
                 <div
@@ -188,16 +190,19 @@
                     alt="fire-service"
                   />
                 </div>
-                <img
-                  class="w-6 h-6 object-cover"
-                  src="./assets/heart.png"
-                  alt="heart"
-                />
+                <button
+                  onclick="clickHeart()"
+                  class="cursor-pointer text-[#5c5c5c] text-2xl"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </button>
               </div>
               <h2 class="text-xl leading-8 font-bold capitalize mt-4">
                 Fire Service Number
               </h2>
-              <h3 class="text-lg text-[#5c5c5c] capitalize mt-1">Fire Service</h3>
+              <h3 class="text-lg text-[#5c5c5c] capitalize mt-1">
+                Fire Service
+              </h3>
               <h4 class="text-3xl font-bold mt-6">999</h4>
               <span
                 class="bg-[#f2f2f2] px-4 py-1.5 rounded-full capitalize mt-1 inline-block"
@@ -219,7 +224,280 @@
                 </button>
               </div>
             </div>
+            <!-- Ambulance Service  -->
+            <div class="shadow rounded-xl bg-white p-7">
+              <div class="flex justify-between items-center">
+                <div
+                  class="w-14 h-14 bg-[#ffe3e2] rounded-2xl flex justify-center items-center"
+                >
+                  <img
+                    class="w-8 h-8 object-cover"
+                    src="./assets/ambulance.png"
+                    alt="ambulance"
+                  />
+                </div>
+                <button
+                  onclick="clickHeart()"
+                  class="cursor-pointer text-[#5c5c5c] text-2xl"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+              <h2 class="text-xl leading-8 font-bold capitalize mt-4">
+                ambulance service
+              </h2>
+              <h3 class="text-lg text-[#5c5c5c] mt-1 capitalize">ambulance</h3>
+              <h4 class="text-3xl font-bold mt-6">1994-999999</h4>
+              <span
+                class="bg-[#f2f2f2] px-4 py-1.5 rounded-full capitalize mt-1 inline-block"
+                >health</span
+              >
+              <div class="flex items-center gap-2 mt-6">
+                <button
+                  class="btn w-1/2 border border-[#5c5c5c] text-[#5c5c5c] flex gap-2.5 items-center rounded-lg"
+                >
+                  <span><i class="fa-solid fa-copy"></i></span>
+                  Copy
+                </button>
+
+                <button
+                  class="btn w-1/2 bg-[#00A63E] text-white flex gap-2.5 items-center rounded-lg"
+                >
+                  <span><i class="fa-solid fa-phone"></i></span>
+                  Copy
+                </button>
+              </div>
+            </div>
+            <!-- women & child Service  -->
+            <div class="shadow rounded-xl bg-white p-7">
+              <div class="flex justify-between items-center">
+                <div
+                  class="w-14 h-14 bg-[#ffe3e2] rounded-2xl flex justify-center items-center"
+                >
+                  <img
+                    class="w-8 h-8 object-cover"
+                    src="./assets/emergency.png"
+                    alt="emergency"
+                  />
+                </div>
+                <button
+                  onclick="clickHeart()"
+                  class="cursor-pointer text-[#5c5c5c] text-2xl"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+              <h2 class="text-xl leading-8 font-bold capitalize mt-4">
+                women & child helpline
+              </h2>
+              <h3 class="text-lg text-[#5c5c5c] mt-1 capitalize">
+                women & child helpline
+              </h3>
+              <h4 class="text-3xl font-bold mt-6">109</h4>
+              <span
+                class="bg-[#f2f2f2] px-4 py-1.5 rounded-full capitalize mt-1 inline-block"
+                >help</span
+              >
+              <div class="flex items-center gap-2 mt-6">
+                <button
+                  class="btn w-1/2 border border-[#5c5c5c] text-[#5c5c5c] flex gap-2.5 items-center rounded-lg"
+                >
+                  <span><i class="fa-solid fa-copy"></i></span>
+                  Copy
+                </button>
+
+                <button
+                  class="btn w-1/2 bg-[#00A63E] text-white flex gap-2.5 items-center rounded-lg"
+                >
+                  <span><i class="fa-solid fa-phone"></i></span>
+                  Copy
+                </button>
+              </div>
+            </div>
+            <!-- Anti-corruption helpline  -->
+            <div class="shadow rounded-xl bg-white p-7">
+              <div class="flex justify-between items-center">
+                <div
+                  class="w-14 h-14 bg-[#ffe3e2] rounded-2xl flex justify-center items-center"
+                >
+                  <img
+                    class="w-8 h-8 object-cover"
+                    src="./assets/emergency.png"
+                    alt="emergency"
+                  />
+                </div>
+                <button
+                  onclick="clickHeart()"
+                  class="cursor-pointer text-[#5c5c5c] text-2xl"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+              <h2 class="text-xl leading-8 font-bold capitalize mt-4">
+                anti-corruption helpline
+              </h2>
+              <h3 class="text-lg text-[#5c5c5c] mt-1 capitalize">
+                anti-corruption
+              </h3>
+              <h4 class="text-3xl font-bold mt-6">106</h4>
+              <span
+                class="bg-[#f2f2f2] px-4 py-1.5 rounded-full capitalize mt-1 inline-block"
+                >govt.</span
+              >
+              <div class="flex items-center gap-2 mt-6">
+                <button
+                  class="btn w-1/2 border border-[#5c5c5c] text-[#5c5c5c] flex gap-2.5 items-center rounded-lg"
+                >
+                  <span><i class="fa-solid fa-copy"></i></span>
+                  Copy
+                </button>
+
+                <button
+                  class="btn w-1/2 bg-[#00A63E] text-white flex gap-2.5 items-center rounded-lg"
+                >
+                  <span><i class="fa-solid fa-phone"></i></span>
+                  Copy
+                </button>
+              </div>
+            </div>
+            <!-- Electricity Helpline -->
+            <div class="shadow rounded-xl bg-white p-7">
+              <div class="flex justify-between items-center">
+                <div
+                  class="w-14 h-14 bg-[#ffe3e2] rounded-2xl flex justify-center items-center"
+                >
+                  <img
+                    class="w-8 h-8 object-cover"
+                    src="./assets/emergency.png"
+                    alt="emergency"
+                  />
+                </div>
+                <button
+                  onclick="clickHeart()"
+                  class="cursor-pointer text-[#5c5c5c] text-2xl"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+              <h2 class="text-xl leading-8 font-bold capitalize mt-4">
+                Electricity helpline
+              </h2>
+              <h3 class="text-lg text-[#5c5c5c] mt-1 capitalize">
+                Electricity outage
+              </h3>
+              <h4 class="text-3xl font-bold mt-6">16216</h4>
+              <span
+                class="bg-[#f2f2f2] px-4 py-1.5 rounded-full capitalize mt-1 inline-block"
+                >Electricity</span
+              >
+              <div class="flex items-center gap-2 mt-6">
+                <button
+                  class="btn w-1/2 border border-[#5c5c5c] text-[#5c5c5c] flex gap-2.5 items-center rounded-lg"
+                >
+                  <span><i class="fa-solid fa-copy"></i></span>
+                  Copy
+                </button>
+
+                <button
+                  class="btn w-1/2 bg-[#00A63E] text-white flex gap-2.5 items-center rounded-lg"
+                >
+                  <span><i class="fa-solid fa-phone"></i></span>
+                  Copy
+                </button>
+              </div>
+            </div>
+            <!-- Brac Helpline -->
+            <div class="shadow rounded-xl bg-white p-7">
+              <div class="flex justify-between items-center">
+                <div
+                  class="w-14 h-14 bg-[#ffe3e2] rounded-2xl flex justify-center items-center"
+                >
+                  <img
+                    class="w-8 h-8 object-cover"
+                    src="./assets/brac.png"
+                    alt="brac"
+                  />
+                </div>
+                <button
+                  onclick="clickHeart()"
+                  class="cursor-pointer text-[#5c5c5c] text-2xl"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+              <h2 class="text-xl leading-8 font-bold capitalize mt-4">
+                brac helpline
+              </h2>
+              <h3 class="text-lg text-[#5c5c5c] mt-1 capitalize">brac</h3>
+              <h4 class="text-3xl font-bold mt-6">16445</h4>
+              <span
+                class="bg-[#f2f2f2] px-4 py-1.5 rounded-full uppercase mt-1 inline-block"
+                >ngo</span
+              >
+              <div class="flex items-center gap-2 mt-6">
+                <button
+                  class="btn w-1/2 border border-[#5c5c5c] text-[#5c5c5c] flex gap-2.5 items-center rounded-lg"
+                >
+                  <span><i class="fa-solid fa-copy"></i></span>
+                  Copy
+                </button>
+
+                <button
+                  class="btn w-1/2 bg-[#00A63E] text-white flex gap-2.5 items-center rounded-lg"
+                >
+                  <span><i class="fa-solid fa-phone"></i></span>
+                  Copy
+                </button>
+              </div>
+            </div>
+            <!-- Raliway Helpline -->
+            <div class="shadow rounded-xl bg-white p-7">
+              <div class="flex justify-between items-center">
+                <div
+                  class="w-14 h-14 bg-[#ffe3e2] rounded-2xl flex justify-center items-center"
+                >
+                  <img
+                    class="w-8 h-8 object-cover"
+                    src="./assets/Bangladesh-Railway.png"
+                    alt="Bangladesh-Railway"
+                  />
+                </div>
+                <button
+                  onclick="clickHeart()"
+                  class="cursor-pointer text-[#5c5c5c] text-2xl"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+              <h2 class="text-xl leading-8 font-bold capitalize mt-4">
+                bangladesh railway helpline
+              </h2>
+              <h3 class="text-lg text-[#5c5c5c] mt-1 capitalize">
+                bangladesh railway
+              </h3>
+              <h4 class="text-3xl font-bold mt-6">163</h4>
+              <span
+                class="bg-[#f2f2f2] px-4 py-1.5 rounded-full capitalize mt-1 inline-block"
+                >travel</span
+              >
+              <div class="flex items-center gap-2 mt-6">
+                <button
+                  class="btn w-1/2 border border-[#5c5c5c] text-[#5c5c5c] flex gap-2.5 items-center rounded-lg"
+                >
+                  <span><i class="fa-solid fa-copy"></i></span>
+                  Copy
+                </button>
+
+                <button
+                  class="btn w-1/2 bg-[#00A63E] text-white flex gap-2.5 items-center rounded-lg"
+                >
+                  <span><i class="fa-solid fa-phone"></i></span>
+                  Copy
+                </button>
+              </div>
+            </div>
           </div>
+
           <!-- call history -->
           <div class="col-span-3 bg-white shadow-inner rounded-lg p-6">
             <div class="flex justify-between items-center">
@@ -238,5 +516,7 @@
         </div>
       </div>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
