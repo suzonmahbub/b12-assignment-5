@@ -1,529 +1,295 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment 5</title>
-    <!-- daisyui -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@5"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <!-- Tailwind css -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Service Directory</title>
+    <!-- Tailwind CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- css link -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
 
-    <!-- Font awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-
-  <body>
+<body>
     <header class="bg-white">
-      <!-- nav area -->
-      <nav
-        class="container mx-auto p-2 md:p-7 flex justify-between items-center"
-      >
-        <div class="left-content flex items-center">
-          <div class="logo-img mr-1 md:mr-3">
-            <a href="#"
-              ><img
-                class="h-10 w-10 md:h-20 md:w-20"
-                src="./assets/logo.png"
-                alt=""
-            /></a>
-          </div>
-          <div class="logo-text">
-            <h2 class="text-[#006747] md:text-2xl font-extrabold">
-              Emergency <br />
-              Service
-            </h2>
-          </div>
+        <!-- nav area -->
+        <nav class="container mx-auto p-2 md:p-7 flex justify-between items-center">
+            <div class="left-content flex items-center">
+                <div class="logo-img mr-1 md:mr-3">
+                    <a href="#"><img class="h-10 w-10 md:h-20 md:w-20" src="./assets/logo.png" alt=""></a>
+                </div>
+                <div class="logo-text">
+                    <h2 class="text-[#006747] md:text-2xl font-extrabold">Emergency <br> Service</h2>
+                </div>
+            </div>
+            <div class="right-content flex gap-2 md:gap-3">
+                <div
+                    class="heart-area w-20 h-10 md:w-28 md:h-12 bg-[#ecfff0] flex items-center justify-center rounded-[50px]">
+                    <span id="heart-count" class="text-black text-xl font-bold">0</span>
+                    <img class="h-5 w-5 md:h-7 md:w-7 ml-2" src="./assets/heart.png" alt="">
+                </div>
+                <div
+                    class="coin-area w-20 h-10 md:w-28 md:h-12 bg-[#ecfff0] flex items-center justify-center rounded-[50px]">
+                    <span id="total-coin" class="text-black text-base md:text-xl font-bold">100</span>
+                    <img class="h-5 w-5 md:h-7 md:w-7 ml-2" src="./assets/coin.png" alt="">
+                </div>
+                <div
+                    class="copy-area cursor-pointer w-20 h-10 md:w-28 md:h-12 bg-[#00A63E] flex items-center justify-center rounded-[50px]">
+                    <h3 id="copy-count" class="capitalize text-white text-base md:text-xl">0 copy</h3>
+                </div>
+            </div>
+        </nav>
+        <!-- banner area -->
+        <div class="banner-area bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223] text-center py-5 md:px-10">
+            <img class="h-24 w-24 mx-auto mb-5" src="./assets/logo-dark.png" alt="">
+            <h2 class="text-white text-xl md:text-3xl font-bold mb-5">Emergency Service Directory</h2>
+            <p class="text-white md:text-xl font-semibold">Government Emergency Services at Your Fingertip – A Project
+                by
+                Government of the People’s Republic of Bangladesh</p>
         </div>
-        <div class="right-content flex gap-2 md:gap-3">
-          <div
-            class="heart-area w-20 h-10 md:w-28 md:h-12 bg-[#ecfff0] flex items-center justify-center rounded-[50px]"
-          >
-            <span id="heart-count" class="text-black text-xl font-bold">0</span>
-            <img
-              class="h-5 w-5 md:h-7 md:w-7 ml-2"
-              src="./assets/heart.png"
-              alt=""
-            />
-          </div>
-          <div
-            class="coin-area w-20 h-10 md:w-28 md:h-12 bg-[#ecfff0] flex items-center justify-center rounded-[50px]"
-          >
-            <span
-              id="total-coin"
-              class="text-black text-base md:text-xl font-bold"
-              >100</span
-            >
-            <img
-              class="h-5 w-5 md:h-7 md:w-7 ml-2"
-              src="./assets/coin.png"
-              alt=""
-            />
-          </div>
-          <div
-            class="copy-area cursor-pointer w-20 h-10 md:w-28 md:h-12 bg-[#00A63E] flex items-center justify-center rounded-[50px]"
-          >
-            <h3
-              id="copy-count"
-              class="capitalize text-white text-base md:text-xl"
-            >
-              0 copy
-            </h3>
-          </div>
-        </div>
-      </nav>
-      <!-- banner area -->
-      <div
-        class="banner-area bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223] text-center py-5 md:px-10"
-      >
-        <img
-          class="h-24 w-24 mx-auto mb-5"
-          src="./assets/logo-dark.png"
-          alt=""
-        />
-        <h2 class="text-white text-xl md:text-3xl font-bold mb-5">
-          Emergency Service Directory
-        </h2>
-        <p class="text-white md:text-xl font-semibold">
-          Government Emergency Services at Your Fingertip – A Project by
-          Government of the People’s Republic of Bangladesh
-        </p>
-      </div>
     </header>
     <main class="bg-[#f5fff6]">
-      <!-- service area -->
-      <div
-        class="service-area container mx-auto pt-8 pb-16 gap-x-7 px-5 md:flex"
-      >
-        <div class="service-left md:w-3/4">
-          <div class="grid md:grid-cols-3 gap-7">
-            <div class="service-item bg-white p-6 rounded-xl shadow-md">
-              <div class="service-img flex justify-between items-center mb-3">
-                <div
-                  class="bg-[#ffe3e2] h-14 w-14 rounded-2xl flex justify-center items-center"
-                >
-                  <img class="h-8 w-8" src="./assets/emergency.png" alt="" />
+        <!-- service area -->
+        <div class="service-area container mx-auto pt-8 pb-16 gap-x-7 px-5 md:flex">
+            <div class="service-left md:w-3/4">
+                <div class="grid md:grid-cols-3 gap-7">
+                    <div class="service-item bg-white p-6 rounded-xl shadow-md">
+                        <div class="service-img flex justify-between items-center mb-3">
+                            <div class="bg-[#ffe3e2] h-14 w-14 rounded-2xl flex justify-center items-center"><img
+                                    class="h-8 w-8" src="./assets/emergency.png" alt=""></div>
+                            <span onclick="clickCount ()" class="text-[#5c5c5c] text-2xl cursor-pointer"><i
+                                    class="fa-regular fa-heart"></i></span>
+                        </div>
+                        <div class="service-text">
+                            <h3 class="text-black text-xl font-bold">National Emergency Number</h3>
+                            <p class="service-name font-normal text-lg text-[#5c5c5c] mb-4">National Emergency</p>
+                            <span class="copy-number text-black font-bold text-2xl block mb-2">999</span>
+                            <button
+                                class="font-normal bg-[#f2f2f2] py-2 px-4 rounded-full text-lg text-[#5c5c5c] mb-6">All</button>
+                        </div>
+                        <div class="service-btn flex justify-between">
+                            <button onclick="clickCopyCount()"
+                                class="bg-white copy-btn hover:bg-black cursor-pointer hover:text-white transition-all duration-300 text-[#5c5c5c] border-2 border-[#f2f2f2] rounded-lg py-2 w-full mr-2"><i
+                                    class="fa-solid fa-copy"></i> <span>Copy</span>
+                            </button>
+                            <button
+                                class="calling-btn bg-[#00a63e] hover:bg-[#cccaca] cursor-pointer transition-all duration-300 text-white rounded-lg py-2 w-full"><i
+                                    class="fa-solid fa-phone"></i> <span>Call</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="service-item bg-white p-6 rounded-xl shadow-md">
+                        <div class="service-img flex justify-between items-center mb-3">
+                            <div class="bg-[#ffe3e2] h-14 w-14 rounded-2xl flex justify-center items-center"><img
+                                    class="h-8 w-8" src="./assets/police.png" alt=""></div>
+                            <span onclick="clickCount ()" class="text-[#5c5c5c] text-2xl cursor-pointer"><i
+                                    class="fa-regular fa-heart"></i></span>
+                        </div>
+                        <div class="service-text">
+                            <h3 class="text-black text-xl font-bold">Police Helpline Number</h3>
+                            <p class="font-normal text-lg text-[#5c5c5c] mb-4">Police</p>
+                            <span class="copy-number text-black font-bold text-2xl block mb-2">999</span>
+                            <button
+                                class="font-normal bg-[#f2f2f2] py-2 px-4 rounded-full text-lg text-[#5c5c5c] mb-6">Police</button>
+                        </div>
+                        <div class="service-btn flex justify-between">
+                            <button onclick="clickCopyCount()"
+                                class="bg-white copy-btn hover:bg-black hover:text-white cursor-pointer transition-all duration-300 text-[#5c5c5c] border-2 border-[#f2f2f2] rounded-lg py-2 w-full mr-2"><i
+                                    class="fa-solid fa-copy"></i> <span>Copy</span></button>
+                            <button
+                                class="calling-btn bg-[#00a63e] hover:bg-[#cccaca] cursor-pointer transition-all duration-300 text-white rounded-lg py-2 w-full"><i
+                                    class="fa-solid fa-phone"></i> <span>Call</span></button>
+                        </div>
+                    </div>
+                    <div class="service-item bg-white p-6 rounded-xl shadow-md">
+                        <div class="service-img flex justify-between items-center mb-3">
+                            <div class="bg-[#ffe3e2] h-14 w-14 rounded-2xl flex justify-center items-center"><img
+                                    class="h-8 w-8" src="./assets/fire-service.png" alt=""></div>
+                            <span onclick="clickCount ()" class="text-[#5c5c5c] text-2xl cursor-pointer"><i
+                                    class="fa-regular fa-heart"></i></span>
+                        </div>
+                        <div class="service-text">
+                            <h3 class="text-black text-xl font-bold">Fire Service Number</h3>
+                            <p class="font-normal text-lg text-[#5c5c5c] mb-4">Fire Service</p>
+                            <span class="copy-number text-black font-bold text-2xl block mb-2">999</span>
+                            <button
+                                class="font-normal bg-[#f2f2f2] py-2 px-4 rounded-full text-lg text-[#5c5c5c] mb-6">Fire</button>
+                        </div>
+                        <div class="service-btn flex justify-between">
+                            <button onclick="clickCopyCount()"
+                                class="bg-white copy-btn hover:bg-black hover:text-white cursor-pointer transition-all duration-300 text-[#5c5c5c] border-2 border-[#f2f2f2] rounded-lg py-2 w-full mr-2"><i
+                                    class="fa-solid fa-copy"></i> <span>Copy</span></button>
+                            <button
+                                class="calling-btn bg-[#00a63e] hover:bg-[#cccaca] cursor-pointer transition-all duration-300 text-white rounded-lg py-2 w-full"><i
+                                    class="fa-solid fa-phone"></i> <span>Call</span></button>
+                        </div>
+                    </div>
+                    <div class="service-item bg-white p-6 rounded-xl shadow-md">
+                        <div class="service-img flex justify-between items-center mb-3">
+                            <div class="bg-[#ffe3e2] h-14 w-14 rounded-2xl flex justify-center items-center"><img
+                                    class="h-8 w-8" src="./assets/ambulance.png" alt=""></div>
+                            <span onclick="clickCount ()" class="text-[#5c5c5c] text-2xl cursor-pointer"><i
+                                    class="fa-regular fa-heart"></i></span>
+                        </div>
+                        <div class="service-text">
+                            <h3 class="text-black text-xl font-bold">Ambulance Service</h3>
+                            <p class="font-normal text-lg text-[#5c5c5c] mb-4">Ambulance</p>
+                            <span class="copy-number text-black font-bold text-2xl block mb-2">1994-999999</span>
+                            <button
+                                class="font-normal bg-[#f2f2f2] py-2 px-4 rounded-full text-lg text-[#5c5c5c] mb-6">Health</button>
+                        </div>
+                        <div class="service-btn flex justify-between">
+                            <button onclick="clickCopyCount()"
+                                class="bg-white copy-btn hover:bg-black hover:text-white cursor-pointer transition-all duration-300 text-[#5c5c5c] border-2 border-[#f2f2f2] rounded-lg py-2 w-full mr-2"><i
+                                    class="fa-solid fa-copy"></i> <span>Copy</span></button>
+                            <button
+                                class="calling-btn bg-[#00a63e] hover:bg-[#cccaca] cursor-pointer transition-all duration-300 text-white rounded-lg py-2 w-full"><i
+                                    class="fa-solid fa-phone"></i> <span>Call</span></button>
+                        </div>
+                    </div>
+                    <div class="service-item bg-white p-6 rounded-xl shadow-md">
+                        <div class="service-img flex justify-between items-center mb-3">
+                            <div class="bg-[#ffe3e2] h-14 w-14 rounded-2xl flex justify-center items-center"><img
+                                    class="h-8 w-8" src="./assets/emergency.png" alt=""></div>
+                            <span onclick="clickCount ()" class="text-[#5c5c5c] text-2xl cursor-pointer"><i
+                                    class="fa-regular fa-heart"></i></span>
+                        </div>
+                        <div class="service-text">
+                            <h3 class="text-black text-xl font-bold">Women & Child Helpline</h3>
+                            <p class="font-normal text-lg text-[#5c5c5c] mb-4">Women & Child Helpline</p>
+                            <span class="copy-number text-black font-bold text-2xl block mb-2">109</span>
+                            <button
+                                class="font-normal bg-[#f2f2f2] py-2 px-4 rounded-full text-lg text-[#5c5c5c] mb-6">Help</button>
+                        </div>
+                        <div class="service-btn flex justify-between">
+                            <button onclick="clickCopyCount()"
+                                class="bg-white copy-btn hover:bg-black hover:text-white cursor-pointer transition-all duration-300 text-[#5c5c5c] border-2 border-[#f2f2f2] rounded-lg py-2 w-full mr-2"><i
+                                    class="fa-solid fa-copy"></i> <span>Copy</span></button>
+                            <button
+                                class="calling-btn bg-[#00a63e] hover:bg-[#cccaca] cursor-pointer transition-all duration-300 text-white rounded-lg py-2 w-full"><i
+                                    class="fa-solid fa-phone"></i> <span>Call</span></button>
+                        </div>
+                    </div>
+                    <div class="service-item bg-white p-6 rounded-xl shadow-md">
+                        <div class="service-img flex justify-between items-center mb-3">
+                            <div class="bg-[#ffe3e2] h-14 w-14 rounded-2xl flex justify-center items-center"><img
+                                    class="h-8 w-8" src="./assets/emergency.png" alt=""></div>
+                            <span onclick="clickCount ()" class="text-[#5c5c5c] text-2xl cursor-pointer"><i
+                                    class="fa-regular fa-heart"></i></span>
+                        </div>
+                        <div class="service-text">
+                            <h3 class="text-black text-xl font-bold">Anti-Corruption Helpline</h3>
+                            <p class="font-normal text-lg text-[#5c5c5c] mb-4">Anti-Corruption</p>
+                            <span class="copy-number text-black font-bold text-2xl block mb-2">106</span>
+                            <button
+                                class="font-normal bg-[#f2f2f2] py-2 px-4 rounded-full text-lg text-[#5c5c5c] mb-6">Govt</button>
+                        </div>
+                        <div class="service-btn flex justify-between">
+                            <button onclick="clickCopyCount()"
+                                class="bg-white copy-btn hover:bg-black hover:text-white cursor-pointer transition-all duration-300 text-[#5c5c5c] border-2 border-[#f2f2f2] rounded-lg py-2 w-full mr-2"><i
+                                    class="fa-solid fa-copy"></i> <span>Copy</span></button>
+                            <button
+                                class="calling-btn bg-[#00a63e] hover:bg-[#cccaca] cursor-pointer transition-all duration-300 text-white rounded-lg py-2 w-full"><i
+                                    class="fa-solid fa-phone"></i> <span>Call</span></button>
+                        </div>
+                    </div>
+                    <div class="service-item bg-white p-6 rounded-xl shadow-md">
+                        <div class="service-img flex justify-between items-center mb-3">
+                            <div class="bg-[#ffe3e2] h-14 w-14 rounded-2xl flex justify-center items-center"><img
+                                    class="h-8 w-8" src="./assets/emergency.png" alt=""></div>
+                            <span onclick="clickCount ()" class="text-[#5c5c5c] text-2xl cursor-pointer"><i
+                                    class="fa-regular fa-heart"></i></span>
+                        </div>
+                        <div class="service-text">
+                            <h3 class="text-black text-xl font-bold">Electricity Helpline</h3>
+                            <p class="font-normal text-lg text-[#5c5c5c] mb-4">Electricity Outage</p>
+                            <span class="copy-number text-black font-bold text-2xl block mb-2">16216</span>
+                            <button
+                                class="font-normal bg-[#f2f2f2] py-2 px-4 rounded-full text-lg text-[#5c5c5c] mb-6">Electricity</button>
+                        </div>
+                        <div class="service-btn flex justify-between">
+                            <button onclick="clickCopyCount()"
+                                class="bg-white copy-btn hover:bg-black hover:text-white cursor-pointer transition-all duration-300 text-[#5c5c5c] border-2 border-[#f2f2f2] rounded-lg py-2 w-full mr-2"><i
+                                    class="fa-solid fa-copy"></i> <span>Copy</span></button>
+                            <button
+                                class="calling-btn bg-[#00a63e] hover:bg-[#cccaca] cursor-pointer transition-all duration-300 text-white rounded-lg py-2 w-full"><i
+                                    class="fa-solid fa-phone"></i> <span>Call</span></button>
+                        </div>
+                    </div>
+                    <div class="service-item bg-white p-6 rounded-xl shadow-md">
+                        <div class="service-img flex justify-between items-center mb-3">
+                            <div class="bg-[#ffe3e2] h-14 w-14 rounded-2xl flex justify-center items-center"><img
+                                    class="h-8 w-8" src="./assets/brac.png" alt=""></div>
+                            <span onclick="clickCount ()" class="text-[#5c5c5c] text-2xl cursor-pointer"><i
+                                    class="fa-regular fa-heart"></i></span>
+                        </div>
+                        <div class="service-text">
+                            <h3 class="text-black text-xl font-bold">Brac Helpline</h3>
+                            <p class="font-normal text-lg text-[#5c5c5c] mb-4">Brac</p>
+                            <span class="copy-number text-black font-bold text-2xl block mb-2">16445</span>
+                            <button
+                                class="font-normal bg-[#f2f2f2] py-2 px-4 rounded-full text-lg text-[#5c5c5c] mb-6">NGO</button>
+                        </div>
+                        <div class="service-btn flex justify-between">
+                            <button onclick="clickCopyCount()"
+                                class="bg-white copy-btn hover:bg-black hover:text-white cursor-pointer transition-all duration-300 text-[#5c5c5c] border-2 border-[#f2f2f2] rounded-lg py-2 w-full mr-2"><i
+                                    class="fa-solid fa-copy"></i> <span>Copy</span></button>
+                            <button
+                                class="calling-btn bg-[#00a63e] hover:bg-[#cccaca] cursor-pointer transition-all duration-300 text-white rounded-lg py-2 w-full"><i
+                                    class="fa-solid fa-phone"></i> <span>Call</span></button>
+                        </div>
+                    </div>
+                    <div class="service-item bg-white p-6 rounded-xl shadow-md">
+                        <div class="service-img flex justify-between items-center mb-3">
+                            <div class="bg-[#ffe3e2] h-14 w-14 rounded-2xl flex justify-center items-center"><img
+                                    class="h-8 w-8" src="./assets/Bangladesh-Railway.png" alt=""></div>
+                            <span onclick="clickCount ()" class="text-[#5c5c5c] text-2xl cursor-pointer"><i
+                                    class="fa-regular fa-heart"></i></span>
+                        </div>
+                        <div class="service-text">
+                            <h3 class="text-black text-xl font-bold">Bangladesh Railway Helpline</h3>
+                            <p class="font-normal text-lg text-[#5c5c5c] mb-4">Bangladesh Railway</p>
+                            <span class="copy-number text-black font-bold text-2xl block mb-2">163</span>
+                            <button
+                                class="font-normal bg-[#f2f2f2] py-2 px-4 rounded-full text-lg text-[#5c5c5c] mb-6">Travel</button>
+                        </div>
+                        <div class="service-btn flex justify-between">
+                            <button onclick="clickCopyCount()"
+                                class="bg-white copy-btn hover:bg-black hover:text-white cursor-pointer transition-all duration-300 text-[#5c5c5c] border-2 border-[#f2f2f2] rounded-lg py-2 w-full mr-2"><i
+                                    class="fa-solid fa-copy"></i> <span>Copy</span></button>
+                            <button id="call-btn"
+                                class="calling-btn bg-[#00a63e] hover:bg-[#cccaca] cursor-pointer transition-all duration-300 text-white rounded-lg py-2 w-full"><i
+                                    class="fa-solid fa-phone"></i> <span>Call</span></button>
+                        </div>
+                    </div>
                 </div>
-                <span
-                  onclick="clickCount ()"
-                  class="text-[#5c5c5c] text-2xl cursor-pointer"
-                  ><i class="fa-regular fa-heart"></i
-                ></span>
-              </div>
-              <div class="service-text">
-                <h3 class="text-black text-xl font-bold">
-                  National Emergency Number
-                </h3>
-                <p class="service-name font-normal text-lg text-[#5c5c5c] mb-4">
-                  National Emergency
-                </p>
-                <span
-                  class="copy-number text-black font-bold text-2xl block mb-2"
-                  >999</span
-                >
-                <button
-                  class="font-normal bg-[#f2f2f2] py-2 px-4 rounded-full text-lg text-[#5c5c5c] mb-6"
-                >
-                  All
-                </button>
-              </div>
-              <div class="service-btn flex justify-between">
-                <button
-                  onclick="clickCopyCount()"
-                  class="bg-white copy-btn hover:bg-black cursor-pointer hover:text-white transition-all duration-300 text-[#5c5c5c] border-2 border-[#f2f2f2] rounded-lg py-2 w-full mr-2"
-                >
-                  <i class="fa-solid fa-copy"></i> <span>Copy</span>
-                </button>
-                <button
-                  class="calling-btn bg-[#00a63e] hover:bg-[#cccaca] cursor-pointer transition-all duration-300 text-white rounded-lg py-2 w-full"
-                >
-                  <i class="fa-solid fa-phone"></i> <span>Call</span>
-                </button>
-              </div>
             </div>
-            <div class="service-item bg-white p-6 rounded-xl shadow-md">
-              <div class="service-img flex justify-between items-center mb-3">
-                <div
-                  class="bg-[#ffe3e2] h-14 w-14 rounded-2xl flex justify-center items-center"
-                >
-                  <img class="h-8 w-8" src="./assets/police.png" alt="" />
+            <div class="service-right md:w-1/4 bg-white rounded-xl shadow-md p-6 mt-8 md:mt-0">
+                <div class="history-top w-full h-14 flex justify-between items-center mb-4">
+                    <div class="call-history flex items-center justify-center">
+                        <span class="mr-2 text-[#5c5c5c] text-xl"><i class="fa-regular fa-clock"></i></span>
+                        <p class="text-black font-medium text-lg">Call History</p>
+                    </div>
+                    <button id="remove-btn"
+                        class="bg-[#00a63e] hover:bg-[#cccaca] cursor-pointer transition-all duration-300 text-lg text-white rounded-[50px] w-28 h-12">Clear</button>
                 </div>
-                <span
-                  onclick="clickCount ()"
-                  class="text-[#5c5c5c] text-2xl cursor-pointer"
-                  ><i class="fa-regular fa-heart"></i
-                ></span>
-              </div>
-              <div class="service-text">
-                <h3 class="text-black text-xl font-bold">
-                  Police Helpline Number
-                </h3>
-                <p class="font-normal text-lg text-[#5c5c5c] mb-4">Police</p>
-                <span
-                  class="copy-number text-black font-bold text-2xl block mb-2"
-                  >999</span
-                >
-                <button
-                  class="font-normal bg-[#f2f2f2] py-2 px-4 rounded-full text-lg text-[#5c5c5c] mb-6"
-                >
-                  Police
-                </button>
-              </div>
-              <div class="service-btn flex justify-between">
-                <button
-                  onclick="clickCopyCount()"
-                  class="bg-white copy-btn hover:bg-black hover:text-white cursor-pointer transition-all duration-300 text-[#5c5c5c] border-2 border-[#f2f2f2] rounded-lg py-2 w-full mr-2"
-                >
-                  <i class="fa-solid fa-copy"></i> <span>Copy</span>
-                </button>
-                <button
-                  class="calling-btn bg-[#00a63e] hover:bg-[#cccaca] cursor-pointer transition-all duration-300 text-white rounded-lg py-2 w-full"
-                >
-                  <i class="fa-solid fa-phone"></i> <span>Call</span>
-                </button>
-              </div>
-            </div>
-            <div class="service-item bg-white p-6 rounded-xl shadow-md">
-              <div class="service-img flex justify-between items-center mb-3">
-                <div
-                  class="bg-[#ffe3e2] h-14 w-14 rounded-2xl flex justify-center items-center"
-                >
-                  <img class="h-8 w-8" src="./assets/fire-service.png" alt="" />
+                <div class="" id="call-history-container">
+                    
                 </div>
-                <span
-                  onclick="clickCount ()"
-                  class="text-[#5c5c5c] text-2xl cursor-pointer"
-                  ><i class="fa-regular fa-heart"></i
-                ></span>
-              </div>
-              <div class="service-text">
-                <h3 class="text-black text-xl font-bold">
-                  Fire Service Number
-                </h3>
-                <p class="font-normal text-lg text-[#5c5c5c] mb-4">
-                  Fire Service
-                </p>
-                <span
-                  class="copy-number text-black font-bold text-2xl block mb-2"
-                  >999</span
-                >
-                <button
-                  class="font-normal bg-[#f2f2f2] py-2 px-4 rounded-full text-lg text-[#5c5c5c] mb-6"
-                >
-                  Fire
-                </button>
-              </div>
-              <div class="service-btn flex justify-between">
-                <button
-                  onclick="clickCopyCount()"
-                  class="bg-white copy-btn hover:bg-black hover:text-white cursor-pointer transition-all duration-300 text-[#5c5c5c] border-2 border-[#f2f2f2] rounded-lg py-2 w-full mr-2"
-                >
-                  <i class="fa-solid fa-copy"></i> <span>Copy</span>
-                </button>
-                <button
-                  class="calling-btn bg-[#00a63e] hover:bg-[#cccaca] cursor-pointer transition-all duration-300 text-white rounded-lg py-2 w-full"
-                >
-                  <i class="fa-solid fa-phone"></i> <span>Call</span>
-                </button>
-              </div>
+
             </div>
-            <div class="service-item bg-white p-6 rounded-xl shadow-md">
-              <div class="service-img flex justify-between items-center mb-3">
-                <div
-                  class="bg-[#ffe3e2] h-14 w-14 rounded-2xl flex justify-center items-center"
-                >
-                  <img class="h-8 w-8" src="./assets/ambulance.png" alt="" />
-                </div>
-                <span
-                  onclick="clickCount ()"
-                  class="text-[#5c5c5c] text-2xl cursor-pointer"
-                  ><i class="fa-regular fa-heart"></i
-                ></span>
-              </div>
-              <div class="service-text">
-                <h3 class="text-black text-xl font-bold">Ambulance Service</h3>
-                <p class="font-normal text-lg text-[#5c5c5c] mb-4">Ambulance</p>
-                <span
-                  class="copy-number text-black font-bold text-2xl block mb-2"
-                  >1994-999999</span
-                >
-                <button
-                  class="font-normal bg-[#f2f2f2] py-2 px-4 rounded-full text-lg text-[#5c5c5c] mb-6"
-                >
-                  Health
-                </button>
-              </div>
-              <div class="service-btn flex justify-between">
-                <button
-                  onclick="clickCopyCount()"
-                  class="bg-white copy-btn hover:bg-black hover:text-white cursor-pointer transition-all duration-300 text-[#5c5c5c] border-2 border-[#f2f2f2] rounded-lg py-2 w-full mr-2"
-                >
-                  <i class="fa-solid fa-copy"></i> <span>Copy</span>
-                </button>
-                <button
-                  class="calling-btn bg-[#00a63e] hover:bg-[#cccaca] cursor-pointer transition-all duration-300 text-white rounded-lg py-2 w-full"
-                >
-                  <i class="fa-solid fa-phone"></i> <span>Call</span>
-                </button>
-              </div>
-            </div>
-            <div class="service-item bg-white p-6 rounded-xl shadow-md">
-              <div class="service-img flex justify-between items-center mb-3">
-                <div
-                  class="bg-[#ffe3e2] h-14 w-14 rounded-2xl flex justify-center items-center"
-                >
-                  <img class="h-8 w-8" src="./assets/emergency.png" alt="" />
-                </div>
-                <span
-                  onclick="clickCount ()"
-                  class="text-[#5c5c5c] text-2xl cursor-pointer"
-                  ><i class="fa-regular fa-heart"></i
-                ></span>
-              </div>
-              <div class="service-text">
-                <h3 class="text-black text-xl font-bold">
-                  Women & Child Helpline
-                </h3>
-                <p class="font-normal text-lg text-[#5c5c5c] mb-4">
-                  Women & Child Helpline
-                </p>
-                <span
-                  class="copy-number text-black font-bold text-2xl block mb-2"
-                  >109</span
-                >
-                <button
-                  class="font-normal bg-[#f2f2f2] py-2 px-4 rounded-full text-lg text-[#5c5c5c] mb-6"
-                >
-                  Help
-                </button>
-              </div>
-              <div class="service-btn flex justify-between">
-                <button
-                  onclick="clickCopyCount()"
-                  class="bg-white copy-btn hover:bg-black hover:text-white cursor-pointer transition-all duration-300 text-[#5c5c5c] border-2 border-[#f2f2f2] rounded-lg py-2 w-full mr-2"
-                >
-                  <i class="fa-solid fa-copy"></i> <span>Copy</span>
-                </button>
-                <button
-                  class="calling-btn bg-[#00a63e] hover:bg-[#cccaca] cursor-pointer transition-all duration-300 text-white rounded-lg py-2 w-full"
-                >
-                  <i class="fa-solid fa-phone"></i> <span>Call</span>
-                </button>
-              </div>
-            </div>
-            <div class="service-item bg-white p-6 rounded-xl shadow-md">
-              <div class="service-img flex justify-between items-center mb-3">
-                <div
-                  class="bg-[#ffe3e2] h-14 w-14 rounded-2xl flex justify-center items-center"
-                >
-                  <img class="h-8 w-8" src="./assets/emergency.png" alt="" />
-                </div>
-                <span
-                  onclick="clickCount ()"
-                  class="text-[#5c5c5c] text-2xl cursor-pointer"
-                  ><i class="fa-regular fa-heart"></i
-                ></span>
-              </div>
-              <div class="service-text">
-                <h3 class="text-black text-xl font-bold">
-                  Anti-Corruption Helpline
-                </h3>
-                <p class="font-normal text-lg text-[#5c5c5c] mb-4">
-                  Anti-Corruption
-                </p>
-                <span
-                  class="copy-number text-black font-bold text-2xl block mb-2"
-                  >106</span
-                >
-                <button
-                  class="font-normal bg-[#f2f2f2] py-2 px-4 rounded-full text-lg text-[#5c5c5c] mb-6"
-                >
-                  Govt
-                </button>
-              </div>
-              <div class="service-btn flex justify-between">
-                <button
-                  onclick="clickCopyCount()"
-                  class="bg-white copy-btn hover:bg-black hover:text-white cursor-pointer transition-all duration-300 text-[#5c5c5c] border-2 border-[#f2f2f2] rounded-lg py-2 w-full mr-2"
-                >
-                  <i class="fa-solid fa-copy"></i> <span>Copy</span>
-                </button>
-                <button
-                  class="calling-btn bg-[#00a63e] hover:bg-[#cccaca] cursor-pointer transition-all duration-300 text-white rounded-lg py-2 w-full"
-                >
-                  <i class="fa-solid fa-phone"></i> <span>Call</span>
-                </button>
-              </div>
-            </div>
-            <div class="service-item bg-white p-6 rounded-xl shadow-md">
-              <div class="service-img flex justify-between items-center mb-3">
-                <div
-                  class="bg-[#ffe3e2] h-14 w-14 rounded-2xl flex justify-center items-center"
-                >
-                  <img class="h-8 w-8" src="./assets/emergency.png" alt="" />
-                </div>
-                <span
-                  onclick="clickCount ()"
-                  class="text-[#5c5c5c] text-2xl cursor-pointer"
-                  ><i class="fa-regular fa-heart"></i
-                ></span>
-              </div>
-              <div class="service-text">
-                <h3 class="text-black text-xl font-bold">
-                  Electricity Helpline
-                </h3>
-                <p class="font-normal text-lg text-[#5c5c5c] mb-4">
-                  Electricity Outage
-                </p>
-                <span
-                  class="copy-number text-black font-bold text-2xl block mb-2"
-                  >16216</span
-                >
-                <button
-                  class="font-normal bg-[#f2f2f2] py-2 px-4 rounded-full text-lg text-[#5c5c5c] mb-6"
-                >
-                  Electricity
-                </button>
-              </div>
-              <div class="service-btn flex justify-between">
-                <button
-                  onclick="clickCopyCount()"
-                  class="bg-white copy-btn hover:bg-black hover:text-white cursor-pointer transition-all duration-300 text-[#5c5c5c] border-2 border-[#f2f2f2] rounded-lg py-2 w-full mr-2"
-                >
-                  <i class="fa-solid fa-copy"></i> <span>Copy</span>
-                </button>
-                <button
-                  class="calling-btn bg-[#00a63e] hover:bg-[#cccaca] cursor-pointer transition-all duration-300 text-white rounded-lg py-2 w-full"
-                >
-                  <i class="fa-solid fa-phone"></i> <span>Call</span>
-                </button>
-              </div>
-            </div>
-            <div class="service-item bg-white p-6 rounded-xl shadow-md">
-              <div class="service-img flex justify-between items-center mb-3">
-                <div
-                  class="bg-[#ffe3e2] h-14 w-14 rounded-2xl flex justify-center items-center"
-                >
-                  <img class="h-8 w-8" src="./assets/brac.png" alt="" />
-                </div>
-                <span
-                  onclick="clickCount ()"
-                  class="text-[#5c5c5c] text-2xl cursor-pointer"
-                  ><i class="fa-regular fa-heart"></i
-                ></span>
-              </div>
-              <div class="service-text">
-                <h3 class="text-black text-xl font-bold">Brac Helpline</h3>
-                <p class="font-normal text-lg text-[#5c5c5c] mb-4">Brac</p>
-                <span
-                  class="copy-number text-black font-bold text-2xl block mb-2"
-                  >16445</span
-                >
-                <button
-                  class="font-normal bg-[#f2f2f2] py-2 px-4 rounded-full text-lg text-[#5c5c5c] mb-6"
-                >
-                  NGO
-                </button>
-              </div>
-              <div class="service-btn flex justify-between">
-                <button
-                  onclick="clickCopyCount()"
-                  class="bg-white copy-btn hover:bg-black hover:text-white cursor-pointer transition-all duration-300 text-[#5c5c5c] border-2 border-[#f2f2f2] rounded-lg py-2 w-full mr-2"
-                >
-                  <i class="fa-solid fa-copy"></i> <span>Copy</span>
-                </button>
-                <button
-                  class="calling-btn bg-[#00a63e] hover:bg-[#cccaca] cursor-pointer transition-all duration-300 text-white rounded-lg py-2 w-full"
-                >
-                  <i class="fa-solid fa-phone"></i> <span>Call</span>
-                </button>
-              </div>
-            </div>
-            <div class="service-item bg-white p-6 rounded-xl shadow-md">
-              <div class="service-img flex justify-between items-center mb-3">
-                <div
-                  class="bg-[#ffe3e2] h-14 w-14 rounded-2xl flex justify-center items-center"
-                >
-                  <img
-                    class="h-8 w-8"
-                    src="./assets/Bangladesh-Railway.png"
-                    alt=""
-                  />
-                </div>
-                <span
-                  onclick="clickCount ()"
-                  class="text-[#5c5c5c] text-2xl cursor-pointer"
-                  ><i class="fa-regular fa-heart"></i
-                ></span>
-              </div>
-              <div class="service-text">
-                <h3 class="text-black text-xl font-bold">
-                  Bangladesh Railway Helpline
-                </h3>
-                <p class="font-normal text-lg text-[#5c5c5c] mb-4">
-                  Bangladesh Railway
-                </p>
-                <span
-                  class="copy-number text-black font-bold text-2xl block mb-2"
-                  >163</span
-                >
-                <button
-                  class="font-normal bg-[#f2f2f2] py-2 px-4 rounded-full text-lg text-[#5c5c5c] mb-6"
-                >
-                  Travel
-                </button>
-              </div>
-              <div class="service-btn flex justify-between">
-                <button
-                  onclick="clickCopyCount()"
-                  class="bg-white copy-btn hover:bg-black hover:text-white cursor-pointer transition-all duration-300 text-[#5c5c5c] border-2 border-[#f2f2f2] rounded-lg py-2 w-full mr-2"
-                >
-                  <i class="fa-solid fa-copy"></i> <span>Copy</span>
-                </button>
-                <button
-                  id="call-btn"
-                  class="calling-btn bg-[#00a63e] hover:bg-[#cccaca] cursor-pointer transition-all duration-300 text-white rounded-lg py-2 w-full"
-                >
-                  <i class="fa-solid fa-phone"></i> <span>Call</span>
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
-        <div
-          class="service-right md:w-1/4 bg-white rounded-xl shadow-md p-6 mt-8 md:mt-0"
-        >
-          <div
-            class="history-top w-full h-14 flex justify-between items-center mb-4"
-          >
-            <div class="call-history flex items-center justify-center">
-              <span class="mr-2 text-[#5c5c5c] text-xl"
-                ><i class="fa-regular fa-clock"></i
-              ></span>
-              <p class="text-black font-medium text-lg">Call History</p>
-            </div>
-            <button
-              id="remove-btn"
-              class="bg-[#00a63e] hover:bg-[#cccaca] cursor-pointer transition-all duration-300 text-lg text-white rounded-[50px] w-28 h-12"
-            >
-              Clear
-            </button>
-          </div>
-          <div class="" id="call-history-container"></div>
-        </div>
-      </div>
+
     </main>
 
-    <script src="./script.js"></script>
-  </body>
+
+    <script src="./javascript/script.js"></script>
+</body>
+
 </html>
